@@ -1,5 +1,5 @@
 ############Dockerfile###########
-FROM openjdk:8u292-jre
+FROM openjdk:8
 
 RUN apt-get update
 RUN apt-get install -y wget
