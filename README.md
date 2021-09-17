@@ -3,7 +3,7 @@
 pull the docker
 
 ```bash
-docker push yanliang12/yan_image_embedding:1.0.1
+docker pull yanliang12/yan_image_embedding:1.0.1
 ```
 
 or build the docker
