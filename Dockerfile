@@ -18,9 +18,9 @@ RUN pip3 install h5py==2.9.0
 RUN pip3 install tensorflow==1.14.0
 RUN pip3 install keras==2.2.4
 
-RUN python3 -c "from tensorflow.keras.applications.vgg19 import VGG19;model = VGG19(weights='imagenet')"
+RUN python3 -c "from tensorflow.keras.applications.densenet import *;densenet_base_model = DenseNet121()"
 
-RUN echo "260515502012"
+RUN echo "sd4gs4g44"
 
 RUN git clone https://github.com/yanliang12/yan_image_embedding.git
 RUN mv yan_image_embedding/* ./
