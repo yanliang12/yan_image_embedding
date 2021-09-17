@@ -29,8 +29,8 @@ base_model = NASNetMobile(
 	)
 
 model = Model(
-	inputs=base_model.input, 
-	outputs=base_model.get_layer('global_average_pooling2d_1').output)
+	inputs = base_model.input, 
+	outputs = base_model.get_layer('global_average_pooling2d_1').output)
 
 def image_to_vector(img_path):
 	img = image.load_img(img_path, target_size=(224, 224))
