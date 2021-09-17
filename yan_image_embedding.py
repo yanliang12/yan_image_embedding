@@ -2,6 +2,8 @@
 import numpy as np
 from tensorflow.keras.models import Model
 from tensorflow.keras.preprocessing import image
+
+'''
 from tensorflow.keras.applications.vgg19 import VGG19
 from tensorflow.keras.applications.vgg19 import preprocess_input
 
@@ -9,6 +11,26 @@ base_model = VGG19(weights='imagenet')
 model = Model(
 	inputs=base_model.input, 
 	outputs=base_model.get_layer('fc1').output)
+
+from tensorflow.keras.applications import MobileNet
+
+MobileNet_basemodel = MobileNet(
+    weights="imagenet",
+	)
+
+#Caused by: org.elasticsearch.index.mapper.MapperParsingException: The number of dimensions for field [logo_embedding] should be in the range [1, 2048] but was [4096]
+'''
+
+from tensorflow.keras.applications import NASNetMobile
+from tensorflow.keras.applications.nasnet import preprocess_input 
+
+base_model = NASNetMobile(
+	weights="imagenet",
+	)
+
+model = Model(
+	inputs=base_model.input, 
+	outputs=base_model.get_layer('global_average_pooling2d_1').output)
 
 def image_to_vector(img_path):
 	img = image.load_img(img_path, target_size=(224, 224))
