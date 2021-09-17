@@ -1,5 +1,5 @@
 ############Dockerfile###########
-FROM openjdk:8
+FROM openjdk:8u292-jre
 
 RUN apt-get update
 RUN apt-get install -y wget
@@ -14,6 +14,7 @@ RUN apt-get install -y python3-dev
 RUN apt-get install -y python3-pip
 
 RUN pip3 install Pillow==7.0.0
+RUN pip3 install h5py==2.9.0
 RUN pip3 install tensorflow==1.14.0
 RUN pip3 install keras==2.2.4
 
